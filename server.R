@@ -9,9 +9,9 @@ shinyServer(function(input, output) {
                   filter = list(position = 'top', clear = FALSE),
                   options = list(pageLength = 15,
                                  dom='C<"clear">Rfrtip',
-                                 search = list(regex = TRUE)),
-                  escape=1,
-                  autoWidth = TRUE)
+                                 search = list(regex = TRUE),
+                                 autoWidth = TRUE),
+                  escape=1)
   })
 
 })
