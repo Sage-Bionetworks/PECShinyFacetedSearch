@@ -15,7 +15,7 @@ colsToUse <- c('id', 'assay', 'fileType', 'assayTarget', 'organism', 'disease',
 colsToUseStr <- paste(colsToUse, collapse=",")
 queryTemplate <- "select %s from file where projectId=='%s'"
   
-allData <- synQuery(sprintf(queryTemplate, colsToUseStr, benefactorId), 
+allData <- synQuery(sprintf(queryTemplate, colsToUseStr, projectId), 
                     blockSize=300)$collectAll()
 colnames(allData) <- gsub(".*\\.", "", colnames(allData))
 allData <- allData[, colsToUse]
