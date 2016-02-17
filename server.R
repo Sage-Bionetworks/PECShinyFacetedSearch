@@ -1,7 +1,7 @@
 library(shiny)
 library(DT)
 
-shinyServer(function(input, output) {
+shinyServer(function(input, output, session) {
   session$sendCustomMessage(type="readCookie",
                             message=list(name='org.sagebionetworks.security.user.login.token'))
   
