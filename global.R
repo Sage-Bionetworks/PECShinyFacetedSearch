@@ -5,7 +5,7 @@ library(stringr)
 library(synapseClient)
 
 synapseLogin()
-projectId <- "syn2787333"
+projectId <- "syn4921369"
 
 # Which columns to consider
 colsToUse <- c('id', 'assay', 'fileType', 'assayTarget', 'organism', 'disease',
