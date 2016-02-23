@@ -10,7 +10,8 @@ shinyServer(function(input, output, session) {
                   options = list(pageLength = 15,
                                  dom='C<"clear">Rfrtip',
                                  search = list(regex = TRUE),
-                                 autoWidth = TRUE),
+                                 autoWidth = TRUE,
+                                 columnDefs = list(list(targets=1, visible=FALSE))),
                   escape=1)
   })
   

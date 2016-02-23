@@ -11,12 +11,6 @@ shinyUI(
   fluidPage(
     title = 'Faceted Data Search',
     
-    tags$head(
-      singleton(
-        includeScript("www/readCookie.js")
-      )
-    ),
-    
     mainPanel(
       tabsetPanel(
         tabPanel("All", 
