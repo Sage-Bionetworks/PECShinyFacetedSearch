@@ -18,8 +18,8 @@ allData <- allData %>% filter(!is.na(fileType))
 allData <- allData %>% mutate_each(funs(factor), -id, -name)
 
 # Turn IDs into urls that open in new tab/window
-allData$id <- paste('<a href="https://www.synapse.org/#!Synapse:', allData$id, 
-                    '" target="_blank">', allData$id, '</a>', sep="")
+allData$synid <- paste('<a href="https://www.synapse.org/#!Synapse:', allData$id, 
+                       '" target="_blank">', allData$id, '</a>', sep="")
 
 # # Filtering for specific data types and making the data for specific tabs
 # # Just an example how to use tidyr and dplyr to reformat.
