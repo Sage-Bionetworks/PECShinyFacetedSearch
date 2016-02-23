@@ -28,7 +28,7 @@ shinyServer(function(input, output, session) {
                                     gsub(":", "", gsub(" ", "_", Sys.time())),
                                     '.csv', sep='')},
       content = function(file) {
-        write.csv(allData[input$all_rows_selected, ], 
+        write.csv(allData[input$all_rows_all, ], 
                   file,
                   row.names = FALSE)
       }
