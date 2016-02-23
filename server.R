@@ -29,7 +29,7 @@ shinyServer(function(input, output, session) {
                                     gsub(":", "", gsub(" ", "_", Sys.time())),
                                     '.csv', sep='')},
       content = function(file) {
-        write.csv(allData[input$all_rows_all, ], 
+        write.csv(allData[input$all_rows_all, ] %>% select(id, everything(), -synid),
                   file,
                   row.names = FALSE)
       }
