@@ -1,7 +1,7 @@
 library(shiny)
 library(DT)
 
-shinyServer(function(input, output) {
+shinyServer(function(input, output, session) {
   
   output$all <- DT::renderDataTable({
     DT::datatable(allData, 
@@ -13,5 +13,17 @@ shinyServer(function(input, output) {
                                  autoWidth = TRUE),
                   escape=1)
   })
-
+  
+  output$downloadData <- downloadHandler(
+    filename = function() { paste('output_', 
+                                  gsub(":", "", gsub(" ", "_", Sys.time())),
+                                  '.csv', sep='')},
+    content = function(file) {
+      rows <- isolate(input$all_rows_all)
+      cat(file=stderr(), paste(rows, collapse=","))
+      write.csv(allData[rows, ], file, row.names = FALSE)
+    }
+  )
+  
+  
 })
