@@ -34,7 +34,9 @@ shinyServer(function(input, output, session) {
     content = function(file) {
       rows <- isolate(input$all_rows_all)
       cat(file=stderr(), paste(rows, collapse=","))
-      write.csv(allData[rows, ], file, row.names = FALSE)
+      write.csv(allData[rows, ] %>% select(id, everything(), -synid),
+                file,
+                row.names = FALSE)
     }
   )
   
