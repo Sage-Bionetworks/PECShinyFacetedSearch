@@ -23,6 +23,18 @@ shinyServer(function(input, output, session) {
                     escape=1)
     })
     
+    output$downloadData <- downloadHandler(
+      filename = function() { paste('output_', 
+                                    gsub(":", "", gsub(" ", "_", Sys.time())),
+                                    '.csv', sep='')},
+      content = function(file) {
+        write.csv(allData[input$all_rows_selected, ], 
+                  file,
+                  row.names = FALSE)
+      }
+    )
+    
+    
   })
   
 })
