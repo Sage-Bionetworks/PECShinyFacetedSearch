@@ -20,8 +20,9 @@ shinyServer(function(input, output, session) {
                                    dom='C<"clear">Rfrtip',
                                    search = list(regex = TRUE),
                                    autoWidth = TRUE,
-                                   columnDefs = list(list(targets="id", visible=FALSE))),
-                    escape=1)
+                                   columnDefs = list(list(targets=0, visible=FALSE))),
+                    escape=1,
+                    rownames=FALSE)
     })
     
     output$downloadData <- downloadHandler(

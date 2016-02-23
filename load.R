@@ -21,6 +21,8 @@ allData <- allData %>% mutate_each(funs(factor), -id, -name)
 allData$synid <- paste('<a href="https://www.synapse.org/#!Synapse:', allData$id, 
                        '" target="_blank">', allData$id, '</a>', sep="")
 
+allData <- allData %>% select(id, synid, everything())
+
 # # Filtering for specific data types and making the data for specific tabs
 # # Just an example how to use tidyr and dplyr to reformat.
 # mrna <- allData %>% 
