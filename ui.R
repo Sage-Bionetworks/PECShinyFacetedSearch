@@ -18,7 +18,7 @@ shinyUI(
     ),
     
     mainPanel(
-      downloadButton('downloadData', 'Download'),
+      downloadButton('downloadData', 'Download current list'),
       hr(),
       tabsetPanel(
         tabPanel("All", 
