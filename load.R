@@ -15,7 +15,7 @@ allData <- allData[, colsToUse]
 allData <- allData %>% filter(!is.na(fileType))
 
 # Convert to factors for selectize filtering in UI
-allData <- allData %>% mutate_each(funs(factor), -id, -name)
+allData <- allData %>% mutate_each(funs(factor), -id)
 
 # Turn IDs into urls that open in new tab/window
 allData$synid <- paste('<a href="https://www.synapse.org/#!Synapse:', allData$id, 
