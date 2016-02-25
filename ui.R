@@ -23,7 +23,9 @@ shinyUI(
         tabPanel("All", 
                  DT::dataTableOutput('all')),
         tabPanel("RNA-Seq", 
-                 DT::dataTableOutput('rnaseq')))
+                 DT::dataTableOutput('rnaseq')),
+        tabPanel("ChIP-Seq", 
+                 DT::dataTableOutput('chipseq')))
     )
   )
 )

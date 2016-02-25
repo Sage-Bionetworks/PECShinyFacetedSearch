@@ -28,6 +28,11 @@ rnaseqData <- allData %>%
   select(id, synid, study, organism, 
           disease, tissueType, cellType, dataType, fileType)
 
+chipseqData <- allData %>% 
+  filter(assay == "RNA-seq") %>% 
+  select(id, synid, assayTarget, study, organism, disease, 
+         tissueType, cellType, dataType, fileType)
+
 # # Filtering for specific data types and making the data for specific tabs
 # # Just an example how to use tidyr and dplyr to reformat.
 # mrna <- allData %>% 
