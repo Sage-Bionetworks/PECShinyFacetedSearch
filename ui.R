@@ -18,10 +18,11 @@ shinyUI(
     ),
     
     mainPanel(
+      downloadButton('downloadData', 'Download'),
+      hr(),
       tabsetPanel(
         tabPanel("All", 
-                 DT::dataTableOutput('all'))),
-      downloadButton('downloadData', 'Download')
+                 DT::dataTableOutput('all')))
     )
   )
 )
