@@ -1,6 +1,6 @@
 # Which columns to consider
-colsToUse <- c('id', 'assay', 'fileType', 'assayTarget', 'organism', 'disease',
-               'tissueType', 'cellType', 'study', 'group', 'name')
+colsToUse <- c('id', 'study', 'assay', 'assayTarget', 'organism', 'disease', 
+               'tissueType', 'cellType', 'dataType', 'fileType')
 
 # query the table with specific columns
 colsToUseStr <- paste(colsToUse, collapse=",")
