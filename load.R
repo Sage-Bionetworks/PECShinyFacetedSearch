@@ -29,7 +29,7 @@ rnaseqData <- allData %>%
           disease, tissueType, cellType, dataType, fileType)
 
 chipseqData <- allData %>% 
-  filter(assay == "RNA-seq") %>% 
+  filter(assay == "CHiP-seq") %>% 
   select(id, synid, assayTarget, study, organism, disease, 
          tissueType, cellType, dataType, fileType)
 
