@@ -18,7 +18,7 @@ shinyUI(
     ),
     
     mainPanel(
-      downloadButton('downloadData', 'Download current list'),
+      downloadButton('downloadData', 'Download current table as CSV'),
       tabsetPanel(
         tabPanel("All", 
                  DT::dataTableOutput('all')))
