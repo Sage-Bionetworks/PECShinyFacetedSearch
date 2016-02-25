@@ -18,10 +18,12 @@ shinyUI(
     ),
     
     mainPanel(
-      downloadButton('downloadData', 'Download current table as CSV'),
+      downloadButton('downloadAll', 'Download current table as CSV'),
       tabsetPanel(
         tabPanel("All", 
-                 DT::dataTableOutput('all')))
+                 DT::dataTableOutput('all')),
+        tabPanel("RNA-Seq", 
+                 DT::dataTableOutput('rnaseq')))
     )
   )
 )

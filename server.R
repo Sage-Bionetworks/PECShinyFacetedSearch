@@ -25,8 +25,22 @@ shinyServer(function(input, output, session) {
                     selection = "none",
                     rownames=FALSE)
     })
+
+    output$rnaseq <- DT::renderDataTable({
+      DT::datatable(rnaseqData, 
+                    extensions = c('ColReorder', 'ColVis'),
+                    filter = list(position = 'top', clear = FALSE),
+                    options = list(pageLength = 10,
+                                   dom='C<"clear">Rfrtip',
+                                   search = list(regex = TRUE),
+                                   autoWidth = TRUE,
+                                   columnDefs = list(list(targets=0, visible=FALSE))),
+                    escape=1,
+                    selection = "none",
+                    rownames=FALSE)
+    })
     
-    output$downloadData <- downloadHandler(
+    output$downloadAll <- downloadHandler(
       filename = function() { paste('output_', 
                                     gsub(":", "", gsub(" ", "_", Sys.time())),
                                     '.csv', sep='')},
