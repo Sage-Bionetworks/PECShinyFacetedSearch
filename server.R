@@ -22,6 +22,7 @@ shinyServer(function(input, output, session) {
                                    autoWidth = TRUE,
                                    columnDefs = list(list(targets=0, visible=FALSE))),
                     escape=1,
+                    selection = "none",
                     rownames=FALSE)
     })
     
