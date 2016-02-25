@@ -38,6 +38,11 @@ atacseqData <- allData %>%
   select(id, synid, study, organism, disease, tissueType, 
          cellType, dataType, fileType)
 
+errbsData <- allData %>% 
+  filter(assay == "ERRBS") %>% 
+  select(id, synid, study, organism, disease, tissueType,
+         cellType, dataType, fileType)
+
 # # Filtering for specific data types and making the data for specific tabs
 # # Just an example how to use tidyr and dplyr to reformat.
 # mrna <- allData %>% 

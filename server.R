@@ -67,6 +67,20 @@ shinyServer(function(input, output, session) {
                     selection = "none",
                     rownames=FALSE)
     })
+
+    output$errbs <- DT::renderDataTable({
+      DT::datatable(errbsData, 
+                    extensions = c('ColReorder', 'ColVis'),
+                    filter = list(position = 'top', clear = FALSE),
+                    options = list(pageLength = 10,
+                                   dom='C<"clear">Rfrtip',
+                                   search = list(regex = TRUE),
+                                   autoWidth = TRUE,
+                                   columnDefs = list(list(targets=0, visible=FALSE))),
+                    escape=1,
+                    selection = "none",
+                    rownames=FALSE)
+    })
     
     output$downloadAll <- downloadHandler(
       filename = function() { paste('output_', 
